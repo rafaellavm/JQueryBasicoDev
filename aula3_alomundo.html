@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Alô mundo JQuery</title>
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+//            window.onload = function(){
+//               document.getElementById('clique').onclick = helloWorld;
+//
+//            }
+//
+//            function helloWorld(){
+//
+//                alert('Hello,world!');
+//            }
+
+
+            $(document).ready(function(){
+
+                $('#clique').click(function(){
+
+                    alert('Hello,world!');
+                });
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <!--<a href="#" onclick="helloWorld()">Clique!</a>-->
+
+        <a href="#" id="clique">Clique!</a>
+
+    </body>
+
+</html>
