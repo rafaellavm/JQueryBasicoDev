@@ -1,1 +1,92 @@
-------------------------------------- aula 01 -------------------------------------
+------------------------------------- aula 03 -------------------------------------
+
+1) link para download para várias versões:
+
+https://jqueryui.com/download/all/
+
+------------------------------------- aula 04 -------------------------------------
+
+2) $
+usando pelo jquery pra fazer a leitura do DOM (modelo de objeto dentro do documento HTML)
+
+ele é semelhante ao uso do operador JQuery
+
+ $('#clique').click(function(){
+ 
+ jQuery('#clique').click(function(){
+
+3) $(document)
+representa todo documento html
+
+4) .ready
+
+$(document).ready
+
+é uma função que espera que todo conteúdo html seja carregado, assim como as funções javascript, todo código css
+
+é semelhante a função 'onload'
+
+5) operador ponto
+
+exemplo: para conseguir acessar uma classe css comum a vários elementos html é só colocar um ponto.
+
+
+6) operador cerquilha 'jogo da velha' = #
+
+quando desejamos aplicar uma regra pra um elemento específico utilizamos o cerquilha, através do id dele.
+
+
+-------
+
+ $('#clique').click(function(){
+ 
+ $() = componente que quero acessar
+ 
+ .click = função que desejo executar
+ 
+------- 
+ 
+7) Funções em JQuery
+
+As funções do Jquery podem ser passivas ou ativas.
+
+ativa: vc vai usá-la para ler o elemento e fazer alguma ação com ele.
+
+ $('#clique').click(function(){
+  alert('Hello,world!');
+   });
+   
+
+passiva: 
+
+$(document).ready(function(){
+ $('#clique').click()
+  });
+
+assim forçaria o click do link assim que documento html estivesse pronto.
+
+-------
+
+8) leitura por tags
+
+quero que todos os LINKS acessem a função:
+
+ $('a').click(function(){
+  alert('Hello,world!');
+  });
+             
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Alô mundo JQuery</title>
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                /*
+                $('#clique').click(function(){
+
+                    alert('Hello,world!');
+                });
+
+                $('.clickMe').click(function(){
+
+                    alert('Hello,world!');
+                });*/
+
+                //vai varrer todos os links e acessar a função
+                $('a').click(function(){
+
+                    alert('Hello,world!');
+                });
+
+
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <a href="#" id="clique" class="clickMe">Clique!</a>
+        <a href="#" class="clickMe">Clique 2!</a>
+
+    </body>
+
+</html>
