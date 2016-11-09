@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Alô mundo JQuery</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            //somente para todos os links dentro da div1 que tenham a classe 'x':
+            $('#div1 a.x').click(function(){
+
+                alert('Hello,world!');
+            });
+
+            //pra todos que tiverem a classe 'x' dentro da 'div1' (o span também acessa a regra):
+            $('#div1 .x').click(function () {
+                alert('Hello,world!');
+            });
+
+            //agora desejo que a regra sirva para todos os links que tenham a classe 'x' na página:
+            $('a.x').click(function () {
+                alert('Hello,world!');
+            });*/
+
+            //quero que a regra se aplique a 'div1' e a 'div2', deixando de fora a 'div3'.
+            //aplica a mesma regra, só separando por vírgula:
+
+            $('#div1 a.x, #div2 a.x').click(function () {
+                alert('Hello,world!');
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <a href="#" class="x">Clique!</a>
+        <a href="#" class="x">Clique 2!</a>
+        <a href="#">Clique 3!</a>
+        <span class="x">Teste</span>
+    </div>
+    <div id="div2">
+        <a href="#" class="x">Clique 4!</a>
+    </div>
+    <div id="div3">
+        <a href="#" class="x">Clique 5!</a>
+    </div>
+</body>
+
+</html>

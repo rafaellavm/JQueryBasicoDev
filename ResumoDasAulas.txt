@@ -14,9 +14,14 @@ ele é semelhante ao uso do operador JQuery
  $('#clique').click(function(){
  
  jQuery('#clique').click(function(){
+ 
+ 
+-------
 
 3) $(document)
 representa todo documento html
+
+-------
 
 4) .ready
 
@@ -26,10 +31,13 @@ $(document).ready
 
 é semelhante a função 'onload'
 
+-------
+
 5) operador ponto
 
 exemplo: para conseguir acessar uma classe css comum a vários elementos html é só colocar um ponto.
 
+-------
 
 6) operador cerquilha 'jogo da velha' = #
 
@@ -76,6 +84,126 @@ quero que todos os LINKS acessem a função:
   });
              
 
+------------------------------------- aula 05 -------------------------------------
+ 
+ 9) exemplo: temos vários links na página html, distribuídos em várias div's, tabelas, etc.
+ 
+ quero que a mesma regra se aplique a todos os links dentro da 'div1': 
+ 
+  
+        <div id="div1">
+            <a href="#">Clique!</a>
+            <a href="#">Clique 2!</a>
+        </div>
+
+        <div id="div2">
+            <a href="#">Clique 3!</a>
+        </div>
+        
+ - nesse caso podemos usar o 'ENCADEAMENTO DE CHAMADAS': 
+ 
+ - vou pegar todos os links dentro da 'div1': 
+ 
+ $('#div1 a').click(function(){
+   alert('Hello,world!');
+});
+
+-------
+
+10) outra situação: quero acessar um link ou uma classe de links dentro dessa 'div1':
+
+- desejo que a regra se aplique a todo link que tenha a classe 'x' dentro da 'div1':
+
+        <div id="div1">
+            <a href="#" class="x">Clique!</a>
+            <a href="#" class="x">Clique 2!</a>
+            <a href="#">Clique 3!</a>
+        </div>
+
+        <div id="div2">
+            <a href="#" class="x">Clique 4!</a>
+        </div>
+        
+ - obs: a div 'div2' também tem um link com a classe 'x', mas ele não deve entrar na regra.
+ 
+ - Resolução:
+ 
+  $('#div1 a.x').click(function(){
+    alert('Hello,world!');
+  });
+  
+-------  
+  
+  - agora eu quero que a regra valha para todas as classes 'x' dentro da 'div1':
+  
+  $('#div1 .x').click(function(){
+    alert('Hello,world!');
+  });
+  
+  - nesse caso o '<span>' também entra na regra:
+  
+  <div id="div1">
+            <a href="#" class="x">Clique!</a>
+            <a href="#" class="x">Clique 2!</a>
+            <a href="#">Clique 3!</a>
+            <span class="x">Teste</span>
+        </div>
+
+        <div id="div2">
+            <a href="#" class="x">Clique 4!</a>
+        </div>
+                
+-------  
+
+- agora desejo que a regra sirva para todos os links que tenham a classe 'x' na página:
+
+$('a.x').click(function(){
+    alert('Hello,world!');
+  });
+ 
+-------  
+
+- quero que a regra se aplique a 'div1' e a 'div2', deixando de fora a 'div3':
+
+ <div id="div1"> 
+        <a href="#" class="x">Clique!</a> 
+        <a href="#" class="x">Clique 2!</a> 
+        <a href="#">Clique 3!</a> 
+        <span class="x">Teste</span> 
+    </div>
+    <div id="div2"> 
+        <a href="#" class="x">Clique 4!</a> 
+    </div>
+    <div id="div3"> 
+        <a href="#" class="x">Clique 5!</a> 
+    </div>
+    
+- para isso é só copiar a regra e dividir as duas com uma vírgula:
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
