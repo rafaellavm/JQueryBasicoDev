@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Entendendo o JQuery</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+           /* $('a').click(function () {
+                var valor = $('#txtTest').css('background-color', 'red');
+
+                //alert(valor);
+            });*/
+
+             $('a').click(function () {
+                var valor = $('#txtTest').css('background-color', 'red').hide().val();
+
+                //alert(valor);
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <a href="#">Clique!</a>
+    </div>
+
+    <input type="text" id="txtTest"/>
+
+</body>
+
+</html>

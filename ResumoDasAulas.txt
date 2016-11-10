@@ -180,11 +180,49 @@ $('a.x').click(function(){
     
 - para isso é só copiar a regra e dividir as duas com uma vírgula:
 
+$('#div1 a.x, #div2 a.x').click(function () {
+ alert('Hello,world!');
+});
 
+
+------------------------------------- aula 06 -------------------------------------
+
+Concatenação de várias funções ao mesmo tempo
  
+ -  quero que, quando clicar no botão, a função pegue o valor do 'value' do input:
  
+  <div id="div1">
+        <a href="#">Clique!</a>
+    </div>
+    
+    <input type="text" id="txtTest" value=""/>
+    
+ value = atributo que é utilizado pra guardar o valor do campo;
  
+ função:
  
+  $('a').click(function () {
+   var valor = $('#txtTest').val();
+   alert(valor);
+});
+
+- funcao val() = funcao que recupera o valor value dos campos.
+
+- pode ser ativa ou passiva:
+
+ativa: val()
+passiva: val("valor que eu quero que o campo tenha")
+ 
+- agora vou querer atribuir algumas regras a esse id 'txtTest' após o clique:
+
+- ele vai atribuir o css, depois esconder o input e depois pegar o valor value do input e exibir no alert 
+
+$('a').click(function () {
+ var valor = $('#txtTest').css('background-color', 'red').hide().val();
+  alert(valor);
+});
+
+
  
  
  
