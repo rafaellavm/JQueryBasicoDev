@@ -222,13 +222,91 @@ $('a').click(function () {
   alert(valor);
 });
 
+------------------------------------- aula 07 -------------------------------------
 
+----- Hierarquia de seletores no jQuery -----
+
+- quero que TODOS MEUS ELEMENTOS FILHOS '<li>'  tenham a regra do css aplicada:
+
+<ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <ul>
+            <li>SubElemento 1</li>
+            <li>SubElemento 2</li>
+            <ul>
+                <li>Camada 3.1</li>
+                <li>Camada 3.2</li>
+                <li>Camada 3.3</li>
+            </ul>
+        </ul>
+</ul>
+
+ $(document).ready(function () {
+            
+  $('ul >li').css("color", "green");
+ });
+ 
+----------------
+ 
+- existe outra forma: quero pegar TODOS OS '<li>' da classe 'lista' e colocar a letra na cor verde:
+- nesse caso colocamos um espaço entre a classe e a tag '<li>':
  
  
+ $(document).ready(function () {
+            
+  $('#lista li').css("color", "green");
+ });
  
  
+----------------
  
- 
+- quero que todos os <ul> DENTRO da div "lista" vão ter os seus filhos "<li>" diretos sendo pintados 
+- então o ul do proprio id 'lista' não entra nessa condição:
+
+ $(document).ready(function () {
+            $('#lista ul > li').css('color', 'green');
+        });
+        
+----------------
+
+- quero que somente o primeiro <ul> dentro da div 'lista' tenha todos os '<li>' pintados:
+- quero que o primeiro <ul> associado à id 'lista' tenha seu primeiro '<li>' diretamente associado PINTADO:
+
+  $(document).ready(function () {
+            $('#lista > ul > li').css('color', 'green');
+        });
+        
+---------------- 
+
+        <ul id="lista">
+        <li id="el1">Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <ul>
+            <li>SubElemento 1</li>
+            <li>SubElemento 2</li>
+            <ul>
+                <li>Camada 3.1</li>
+                <li>Camada 3.2</li>
+                <li>Camada 3.3</li>
+            </ul>
+        </ul>
+    </ul>
+
+- quero meu primeiro elemento irmão <li> depois do <li> de id 'el1' seja pintado de verde
+
+ $(document).ready(function () {
+            $('#el1 + li').css('color', 'green');
+        });
+        
+        
+- quero que TODOS os irmãos '<li>' após o '<li>' com id 'el1' sejam pintados de verde:
+
+$(document).ready(function () {
+            $('#el1 ~ li').css('color', 'green');
+        }); 
  
  
  

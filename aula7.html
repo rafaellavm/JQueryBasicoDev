@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Entendendo o JQuery</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //só atribui o css à primeira lista de '<li>', somente aos filhos DIRETOS:
+        /*$(document).ready(function () {
+
+            $('#lista >li').css("color", "green");
+        });*/
+        //só atribui o css a todos os <li> da div 'lista:
+        /*$(document).ready(function () {
+
+            $('ul >li').css("color", "green");
+        });*/
+        //todos os li da div com id 'lista' serão atribuídos o css:
+        /*$(document).ready(function () {
+
+            $('#lista li').css("color", "green");
+        });*/
+
+        //quero que somente o primeiro <ul> dentro da div 'lista' tenha todos os '<li>' pintados:
+        /*$(document).ready(function () {
+            $('#lista > ul > li').css('color', 'green');
+        });*/
+
+
+        //quero meu primeiro elemento irmão<li> depois do <li> de id 'el1' seja pintado de verde
+        $(document).ready(function () {
+            $('#el1 + li').css('color', 'green');
+        });
+
+        //quero que todos os irmãos '<li>' após o '<li>' com id 'el1' sejam pintados de verde:
+        /*$(document).ready(function () {
+            $('#el1 ~ li').css('color', 'green');
+        });*/
+
+    </script>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Elemento teste</li>
+        <li id="el1">Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <ul>
+            <li>SubElemento 1</li>
+            <li>SubElemento 2</li>
+            <ul>
+                <li>Camada 3.1</li>
+                <li>Camada 3.2</li>
+                <li>Camada 3.3</li>
+            </ul>
+        </ul>
+    </ul>
+</body>
+
+</html>
