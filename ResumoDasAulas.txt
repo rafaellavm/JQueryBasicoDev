@@ -312,7 +312,7 @@ $(document).ready(function () {
  
 ------------------------------------- aula 08 -------------------------------------
  
------------------------- Seletores de filtros básicos --------------------
+------------------- Seletores de filtros básicos --------------------
  
  - Seletores são identificados por algum código que antecedem a palavra principal
  
@@ -321,7 +321,7 @@ $(document).ready(function () {
  
 ------------------------------------- aula 09 -------------------------------------
  
- 
+--  
  
  
  
