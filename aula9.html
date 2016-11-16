@@ -3,16 +3,90 @@
 <head>
     <title>Entendendo o JQuery</title>
     <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .vazio {
+            width: 300px;
+            height: 30px;
+            border: 1px solid gray;
+            background-color: cadetblue;
+        }
+
+        .cheio{
+
+           /*background-color: burlywood;*/
+            border: 1px solid blue;
+        }
+
+    </style>
     <script type="text/javascript">
 
+        // https://api.jquery.com/category/selectors/content-filter-selector/
+        //:contains() Selector
+
+        //quero aplicar a propriedade na <div> que contenha a palavra 'azul'
+        //quero outra regra para toda <tr> que contenha a escrita "Rafaela"
+        /*$(document).ready(function(){
+            $('div:contains("azul")').css('color', 'red');
+            $('tr:contains("Rafaela")').css('font-weight','bold');
+        });*/
+
+        //quero adicionar uma class css (".vazio") a todas as <div> e <td> que estão VAZIAS
+        /*$(document).ready(function () {
+            $('div:empty').addClass('vazio');
+            $('td:empty').addClass('vazio');
+        });*/
+
+
+        //:parent Selector
+        //seleciona todos os que têm conteúdo e atribui a classe 'cheio'
+        /* $(document).ready(function(){
+
+            $('div:parent').addClass('cheio');
+            $('td:parent').addClass('cheio');
+        });*/
+
+        //quero verificar em todas as '<div>' e <td> TODOS QUE TENHAM '<span>'
+        //
+        $(document).ready(function(){
+
+            $('div:has("span")').css('background-color','green');
+            $('td:has("span")').css('background-color','green');
+        });
 
     </script>
 </head>
 
 <body>
-
-
-
+    <div><span>O céu é azul</span></div>
+    <div>Curso Devmedia</div>
+    <div></div>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <td>Nome</td>
+            <td><span>Idade</span></td>
+            <td>Endereço</td>
+        </tr>
+        <tr>
+            <td>Rafaela</td>
+            <td>37</td>
+            <td>Endereço da Rafaela</td>
+        </tr>
+        <tr>
+            <td>Elaine</td>
+            <td>35</td>
+            <td>Endereço da Elaine</td>
+        </tr>
+        <tr>
+            <td>Manuela</td>
+            <td>33</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Amelia</td>
+            <td>66</td>
+            <td></td>
+        </tr>
+    </table>
 </body>
 
 </html>

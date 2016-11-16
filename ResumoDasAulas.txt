@@ -310,14 +310,16 @@ $(document).ready(function () {
  
  
  
- ------------------------------------- aula 08 -------------------------------------
+------------------------------------- aula 08 -------------------------------------
  
- ------------------------ Seletores de filtros básicos --------------------
+------------------------ Seletores de filtros básicos --------------------
  
  - Seletores são identificados por algum código que antecedem a palavra principal
  
  - : estar após o elemento que devemos filtrar
  
+ 
+------------------------------------- aula 09 -------------------------------------
  
  
  
