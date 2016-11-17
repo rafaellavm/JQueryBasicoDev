@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Entendendo o JQuery</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+
+        /* https://api.jquery.com/category/attributes/ */
+
+       //dentro do colchete [] eu coloco a regra:
+       // quero que atribua o css a todo link que o 'name=link1'
+       /* $(document).ready(function(){
+            $('a[name="link1"]').css('color','red');
+        });*/
+
+        //quero atribuir o css a todos os 'names' que tenham o nome 'link' como atributo (então serve pra todos, link1, link2, etc)
+        //independente da ordem
+        /*$(document).ready(function(){
+
+            $('a[name*="link"]').css('color','pink');
+        });*/
+
+        //ele verifica se o atributo definido tem um espaço antes ou depois e atribui o css (link 7)
+        //name=" link " => tem espaço
+        /* $(document).ready(function(){
+            $('a[name~="link"]').css('color', 'gray');
+        });*/
+
+        //^= quero buscar todos os links que possuem o atributo 'id' um valor COMEÇANDO em 4 (id="4link")
+        //$= quero buscar todos os links que possuem o atributo 'id' um valor TERMINANDO em 4 (id="link4")
+        /* $(document).ready(function(){
+            $('a[id^="4"]').css('color','red');
+            $('a[id$="4"]').css('color','green');
+        });*/
+
+        //quero buscar todos os links com id DIFERENTE de 'link4'
+        $(document).ready(function(){
+            $('a[id!="link4"]').css('color','red');
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <a href="#" name="link1">Link 1</a>
+    <a href="#" class="link">Link 2</a>
+    <a href="#" class="link">Link 3</a>
+    <a href="#" id="link4">Link 4</a>
+    <a href="#" name="link1" id="4link">Link 5</a>
+    <a href="#" name="link2">Link 6</a>
+    <a href="#" name=" link ">Link 7</a>
+</body>
+
+</html>
+
+
+
+
+
+
