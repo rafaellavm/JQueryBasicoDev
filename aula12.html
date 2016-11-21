@@ -1,0 +1,238 @@
+<html>
+
+<head>
+	<title>JQuery: Funções de atributos</title>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+		.test {
+			border: 2px solid blue;
+			padding: 5px;
+		}
+
+		.test2 {
+			margin: 30px;
+		}
+
+		.test3 {
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		//https://api.jquery.com/category/attributes/
+		/*.addClass()
+
+		.attr()
+
+		.hasClass()
+
+		.html()
+
+		.prop()
+
+		.removeAttr()
+
+		.removeClass()
+
+		.removeProp()
+
+		.toggleClass()
+
+		.val()*/
+		//.attr()
+		//$(':text').attr('type') = ele busca os atributos pelo tipo de texto
+		/*$(document).ready(function () {
+			$(':button').click(function () {
+				var tipo = $(':text').attr('type');
+				alert(tipo);
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.attr()
+		//.prop() A diferença é que o método .prop() está no DOM e o método .attr() está no HTML.
+		//$(':button').attr('class') = ele vai pegar a classe que está sendo atribuída ao button (.test)
+		/*$(document).ready(function () {
+
+			$(':button').addClass('test');
+
+			$(':button').click(function () {
+				var tipo = $(':button').attr('class');
+				alert(tipo);
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.html()
+		//$('option').html() = ele pega o valor html do primeiro <option>, no caso é 'Brasil'
+		/*$(document).ready(function () {
+
+			$(':button').click(function () {
+				var tipo = $('option').html();
+				alert(tipo);
+			});
+		});*/
+
+		//.html()
+		//$('option:eq(2)').html() = ele pega o valor html do TERCEIRO <option>, no caso é 'USA'
+		/*$(document).ready(function () {
+
+			$(':button').click(function () {
+				var tipo = $('option:eq(2)').html();
+				alert(tipo);
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.attr()
+		//$('option:eq(2)').attr('disabled') = ele retorna 'disabled' pois esse é um atributo do option que está 'disabled'
+		/*$(document).ready(function () {
+
+			$(':button').click(function () {
+				var tipo = $('option:eq(2)').attr('disabled');
+				alert(tipo);
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.hasClass()
+		//$('checkbox').hasClass('test') : retorna um booleano dizendo se o checkbox tem a classe 'test' ou não
+		/*$(document).ready(function () {
+			$(':checkbox').addClass('test');
+			$(':button').click(function () {
+				var tipo = $(':checkbox').hasClass('test');
+				alert(tipo);
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.attr()
+		//$(':checkbox').attr('style','margin:30px'): ele muda o atributo 'style' do checkbox adicionando uma margin
+		/*$(document).ready(function () {
+			$(':checkbox').addClass('test');
+			$(':button').click(function(){
+				$(':checkbox').attr('style','margin:30px');
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.val()
+		//busca o valor de um campo
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				var texto = $(':text').val();
+				alert(texto);
+			});
+
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//.addClass()
+		//adiciona uma classe ou mais (separado por vírgula). Nesse caso ele pega o último <li> de uma lista
+
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				$('li:last').addClass('test2, test3');
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//removeClass()
+		//remove uma classe
+
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				$('li:last').removeClass('test3');
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//toggleClass()
+
+		//Ele alterna uma determinada classe, adicionando e removendo-a sem a necessidade de IFs ou coisas assim.
+		//Eles detectam se o elemento tem ou não a classe. Se houver a classe, ele a retira, se não, ele adiciona.
+
+		/*$(document).ready(function(){
+			$(':button').click(function(){
+				$('li:first').toggleClass('test3');
+				$('li:last').toggleClass('test3');
+			});
+		});*/
+
+		//------------------------------------------------------------------------------------------
+
+		//removeAttr()
+		//Remove um atributo de um elemento.
+
+		$(document).ready(function(){
+			$(":button").click(function(){
+				$("p").removeAttr("style");
+			});
+		});
+
+
+	</script>
+</head>
+
+<body>
+	<form> Nome:
+		<input type="text" />
+		<br/>
+		<br/> Senha:
+		<input type="password" disabled="disabled" />
+		<br/>
+		<br/> Radio:
+		<input type="radio" name="s" /> Masc
+		<input type="radio" name="s" /> Fem
+		<br/>
+		<br/> File:
+		<input type="file" />
+		<br/>
+		<br/> Checks
+		<input type="checkbox" checked="checked" /> A
+		<input type="checkbox" /> B
+		<input type="checkbox" /> C
+		<br/>
+		<br/> Select:
+		<select>
+			<option>Brasil</option>
+			<option selected="selected">Portugal</option>
+			<option disabled="disabled">USA</option>
+		</select>
+		<br>
+		<br/>
+		<textarea></textarea>
+		<br>
+		<br/>
+		<input type="submit" value="Submit" />
+		<input type="reset" value="Reset" />
+		<input type="button" value="Button" /> </form>
+	<hr />
+	<ul>
+		<li>Primeiro</li>
+		<li>Segundo</li>
+		<li class="test3">Terceiro</li>
+	</ul>
+
+	<hr />
+
+	<p style="font-size:120%;color:red">Isso é um parágrafo</p>
+	<p style="font-weight:bold;color:blue">Isso é um outro parágrafo</p>
+
+</body>
+
+</html>
