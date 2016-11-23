@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<title>JQuery: Manipulando Conteúdo e Atributos</title>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+		.test {
+			border: 2px solid blue;
+			padding: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		//https://api.jquery.com/category/attributes/
+
+		//toggleClass()
+
+		//Ele alterna uma determinada classe, adicionando e removendo-a sem a necessidade de IFs ou coisas assim.
+		//Eles detectam se o elemento tem ou não a classe. Se houver a classe, ele a retira, se não, ele adiciona.
+		/*
+		$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				$('div').toggleClass('test');
+			});
+		});*/
+
+		/* --------------------------------------------------------------------------------------------- */
+
+		//.html()
+		//$('div').html(); = ele pega o valor html dentro da <div>, portanto, 'lorem ipsun...', inclusive o <br>
+
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				var texto = $('div').html();
+				alert(texto);
+			});
+
+		});*/
+
+		/* --------------------------------------------------------------------------------------------- */
+		//.text()
+		//$('div').text(); = parecido com o .html(), mas ele pega SOMENTE o texto, sem as tags html
+
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				var texto = $('div').text();
+				alert(texto);
+			});
+		});*/
+
+
+		/* --------------------------------------------------------------------------------------------- */
+		//.replaceWith()
+		//Ele troca o texto que está dentro da tag especificada pelo texto informado por ele (sem tags html)
+
+		/*$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				//var texto = $('div').text();
+				//alert(texto);
+
+				$('div').replaceWith('Rafaela é lindona!');
+			});
+		});*/
+
+		/* --------------------------------------------------------------------------------------------- */
+		//.prop()
+		//habilita uma propriedade do input
+		//tb pode ser usado o removeProp()
+
+		$(document).ready(function(){
+
+			$(':button').click(function(){
+
+				$("input[type='checkbox']").prop({
+  					disabled: true
+				});
+			});
+		})
+
+
+	</script>
+</head>
+
+<body>
+	<div>
+		Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI
+		<br />
+		<span>Rafaela Marraschi</span>
+		<br /><br /><br /><br />
+	</div>
+
+	<input type="button" value="Button">
+
+	<br /><br /><br /><br />
+	<input type="checkbox" checked="checked">
+  	<input type="checkbox">
+  	<input type="checkbox">
+  	<input type="checkbox" checked="checked">
+
+</body>
+
+</html>
