@@ -1,5 +1,5 @@
 # cursoJQuery
-Curso de Jquery
+Jquery Básico
 
 Vários exemplos JQuery, todos comentados por mim.
 
