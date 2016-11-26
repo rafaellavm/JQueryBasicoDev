@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>JQuery: DOM: Inserindo elementos</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        //https://api.jquery.com/category/manipulation/
+
+        // append()
+
+        // append(): adiciona ao final
+        // $('#div1').append($('span')): fazendo isso ele vai trazer o <span> pra DENTRO da 'div1'
+        // assim ele considera TODOS os <span> da página
+        // ele insere logo abaixo
+
+        /* $(document).ready(function(){
+             
+             $(':button').click(function(){
+                 
+                 $('#div1').append($('span'));
+             });
+             
+         });*/
+
+        /* --------------------------------------------------------------------------------------------- */
+
+        // var imagem = $('<img />', ) = colocando a vírgula podemos passar um outro parâmetro, no caso um JSON, com todos os atributos que desejamos passar para aquele componente.
+
+        // var imagem = $('<img />', src: 'img/bolodechocolate.png');
+        
+        // pode associar várias propriedades dentro do json como 'border', funções, etc
+
+        $(document).ready(function () {
+            $(':button').click(function () {
+                
+                $('#div1').append($('span'));
+;
+                var imagem = $('<img/>', 
+                               {src: 'img/bolodechocolate.png',  border:1, mouseover: function(){
+                                   alert("Rafaela");
+                               }});
+
+                $('#div1').append(imagem);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <span>Rafaela</span>
+    <div id="div1" class="test">
+        <p id="paragrafo1">Teste</p>
+    </div>
+
+    <input type="button" value="Append" />
+</body>
+
+</html>
