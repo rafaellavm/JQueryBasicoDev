@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>JQuery: DOM: Removendo elementos com DOM</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .test {
+			border: 2px solid blue;
+			padding: 5px;
+		}
+    </style>
+    <script type="text/javascript">
+       // https://api.jquery.com/category/manipulation/dom-removal/
+
+        //remove(): remove toda a div, diferente do 'empty()' que só remove o conteúdo
+        /*$(document).ready(function(){
+            $(':button').click(function(){
+
+                //remove toda a div
+                //$('div').remove();
+
+                //remove a div inteira que tem a classe 'test'
+                //$('div').remove('.test');
+
+                //remove tudo dentro do parágrafo com id 'paragrafo1'
+                $('p').remove('#paragrafo1');
+            });
+        });*/
+
+
+        //unwrap(): retira tudo em volta do elemento
+        //wrap() : adiciona
+        $(document).ready(function(){
+
+            $(':button').click(function(){
+
+                //retira a div que envolve o p
+                //$('p').unwrap('<div></div>');
+                //$('p').unwrap($('div'));
+
+                //"se a tag 'p' tem uma 'div' acima dela..."
+                //"então retira a div.."
+                //senão ele inclui
+                if($('p').parent().is('div')){
+                   $('p').unwrap($('div'));
+                }
+                else{
+                    $('p').wrap('<div class="test"></div>');
+                }
+            });
+        });
+
+
+    </script>
+</head>
+    <span>Rafaela</span>
+    <div id="div1" class="test">
+        <p id="paragrafo1">Teste 1</p>
+    </div>
+    <div id="div2">
+        <p id="paragrafo2">Teste 2</p>
+    </div>
+    <input type="button" value="Testar" />
+<body>
+
