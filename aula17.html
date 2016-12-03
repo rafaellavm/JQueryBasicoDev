@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>JQuery: DOM: Manipulando CSS</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<style type="text/css">
+    .css{
+        padding: 30px;
+        margin:20px;
+        border: 2px solid green;
+    }
+	</style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(':button').click(function(){
+                //$('img').css('width', '200px').css('height', '80px');
+                //$('img').css('border', '2px solid red');
+
+                //ou pode ser passado por json:
+                /*$('img').css({
+                    width: '200px',
+                    height: '80px',
+                    border: '2px solid red'
+                });*/
+
+                //atribuindo class
+                $('img').addClass('css');
+                $('img').width(200);
+
+                //alert($('img').width());
+
+                //position mostra as medidas reais
+                //alert($('img').position().top);
+                //alert($('img').position().left);
+
+                //offset mostra como será impresso as medidas
+                alert($('img').offset().top);
+            });
+        })
+    </script>
+</head>
+<div id="div1" class="test">
+    <p id="paragrafo1">
+        <img src="img/bolodechocolate.png" />
+    </p>
+</div>
+<input type="button" value="Testar" />
+
+<body>
