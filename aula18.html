@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Mouse events</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //https://api.jquery.com/category/events/mouse-events/
+
+        //dblclick: double click
+        //mousedown: evento exatamente no momento do click
+        //mouseup: evento para quando eu solto meu mouse, quando saio do click
+        //mouseover: evento para quando o mouse estiver entrando dentro da região a ser manipulada,
+        //mouseout: evento para quando o mouse estiver saindo da região a ser manipulada
+        //mouseleave: parecido com o mouseout
+        //mouseenter: parecido com o mouseover
+        //mousemove: quando movimento o mouse na região em questão
+        //toggle: substitui
+        //hover: evento quando passa por cima da região a ser manipulada. PArecido com mouseover
+
+        $(document).ready(function(){
+
+           $('#paragrafo2')/*.click(function(){
+
+               $('#paragrafo1').text('Click event!');
+
+           }).dblclick(function(){
+
+               $('#paragrafo1').text('double click event!');
+           }) .mousedown(function(){
+
+               $('#paragrafo1').text('Mouse down event!');
+
+           }).mouseup(function(){
+
+               $('#paragrafo1').text('Mouse up event!');
+           }).mouseover(function(){
+
+               $('#paragrafo1').text('Mouse over event!');
+           }).mouseout(function(){
+
+               $('#paragrafo1').text('Mouse out event!');
+           }).mouseleave(function(){
+
+               $('#paragrafo1').text('Mouse leave event!');
+           }).mouseenter(function(){
+
+               $('#paragrafo1').text('Mouse enter event!');
+           }).mousemove(function(){
+
+               $('#paragrafo1').text('Mouse move event!');
+           });
+           .toggle(function(){
+               $('#paragrafo1').text('toggle event!');
+           });
+           .hover(function(){
+               $('#paragrafo1').text('mouse hover event!');
+           });*/
+           .contextmenu(function(){
+               $('#paragrafo1').text('contextmenu!');
+           });
+        });
+
+
+    </script>
+    <style type="text/css">
+        .paragrafo{
+            width: 250px;
+            height: 80px;
+            border: 2px dotted black;
+            text-align: center;
+            font-size: 25pt;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="div1" class="test">
+        <p id="paragrafo1" class="paragrafo">
+        </p>
+        <p id="paragrafo2"  class="paragrafo">
+            Passe o mouse!
+        </p>
+    </div>
+
+    <input type="button" value="Testar">
+
+</body>
+
+</html>
