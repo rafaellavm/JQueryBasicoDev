@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Eventos jQuery: Eventos de Teclado</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //https://api.jquery.com/category/events/mouse-events/
+        $(document).ready(function () {
+
+            //keyup : evento disparado quando se clica no input do nome
+            /*$("#nome").keyup(function(){
+
+            $('#paragrafo1').text($(this).val());
+         });*/
+
+            //keydown : evento disparado quando a tecla é disparada diretamente
+            /*$('#nome').keydown(function(){
+                $('#paragrafo1').text($(this).val());
+            })*/
+
+            //keypress: quando a tecla é pressionada (parecido com keydown)
+            /*$('#nome').keypress(function(){
+               $('#paragrafo1').text($(this).val());
+            });*/
+
+            //focus: colocar foco no campo
+            /*$('#nome').focus(function(){
+
+                alert('foco recebido');
+            });*/
+
+            //blur: evento disparado quando sai do foco
+            $('#nome').blur(function(){
+                $('#paragrafo1').text('Blur funcionando');
+            });
+
+        });
+
+
+
+    </script>
+    <style type="text/css">
+        .paragrafo {
+            width: 250px;
+            height: 80px;
+            border: 2px dotted black;
+            text-align: center;
+            font-size: 25pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1" class="test">
+        <p id="paragrafo1" class="paragrafo"> </p>
+
+        <form>
+            Nome: <input type="text" id="nome"/>
+            <br />
+            Sexo: <input type="radio" id="sexo"/> M
+            <input type="radio" id="sexo"/> F
+            <br />
+            Estado:
+            <select>
+                <option>Bahia</option>
+                <option>Ceará</option>
+                <option>SP</option>
+            </select>
+            <br />
+            Descrição:
+            <textarea></textarea>
+            <br />
+            <input type="button" value="Enviar"/>
+        </form>
+    </div>
+
+ </body>
+
+</html>
