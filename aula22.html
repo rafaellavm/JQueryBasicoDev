@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>jQuery: Associações avançadas: trigger e delegate </title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .paragrafo {
+            width: 250px;
+            height: 80px;
+            border: 2px dotted black;
+            text-align: center;
+            font-size: 25pt;
+        }
+    </style>
+    <script type="text/javascript">
+
+        //http://api.jquery.com/category/events/event-handler-attachment/
+        $(document).ready(function(){
+
+            function teste(){
+               $('#paragrafo1').text($(this).val());
+            }
+
+            //$(':text'): todos os campos do tipo text
+            //$(':text').bind('keypress blur', teste);
+
+            //função bind() só funciona para elementos que já estão na página html. Pra inputs criados depois ele não funciona
+            //pra contornar isso usaremos o delegate. Ele delegará que, pra todo componente do form que for do tipo texto, deverá usar o keypress com a função teste
+            $('form').delegate(':text', 'keypress blur', teste);
+
+
+            $('#add').click(function(){
+
+                //quero incluir no form um input do tipo text
+                $('form').append('<input type="text" />');
+
+                $('#nome').val('abc');
+                //trigger() vai engatilhar uma função trigger blur
+                $('#nome').trigger('blur');
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="div1" class="test">
+        <p id="paragrafo1" class="paragrafo"> </p>
+        <form> Nome:
+            <input type="text" id="nome" />
+              <br />
+             Endereço: <input type="text" id="endereco" />
+
+            <br /> Sexo:
+            <input type="radio" id="sexo" value="M" /> M
+            <input type="radio" id="sexo" value="F" /> F
+            <br /> Estado:
+            <select>
+                <option>Bahia</option>
+                <option>Ceará</option>
+                <option>SP</option>
+            </select>
+            <br /> Descrição:
+            <textarea>Texto da Rafaelaaa</textarea>
+            <br />
+            <input type="button" value="Add" id="add"/>
+            <input type="button" value="Reset" id="reset" /> </form>
+    </div>
+</body>
+
+</html>
