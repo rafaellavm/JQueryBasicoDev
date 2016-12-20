@@ -13,35 +13,24 @@
         }
     </style>
     <script type="text/javascript">
-
         //http://api.jquery.com/category/events/event-handler-attachment/
         $(document).ready(function(){
-
             function teste(){
                $('#paragrafo1').text($(this).val());
             }
-
             //$(':text'): todos os campos do tipo text
             //$(':text').bind('keypress blur', teste);
-
             //função bind() só funciona para elementos que já estão na página html. Pra inputs criados depois ele não funciona
             //pra contornar isso usaremos o delegate. Ele delegará que, pra todo componente do form que for do tipo texto, deverá usar o keypress com a função teste
             $('form').delegate(':text', 'keypress blur', teste);
-
-
             $('#add').click(function(){
-
                 //quero incluir no form um input do tipo text
                 $('form').append('<input type="text" />');
-
                 $('#nome').val('abc');
                 //trigger() vai engatilhar uma função trigger blur
                 $('#nome').trigger('blur');
             });
-
         });
-
-
     </script>
 </head>
 
