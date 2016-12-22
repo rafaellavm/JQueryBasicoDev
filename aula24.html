@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <title>jQuery: Efeitos slide e fade  </title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+         .sanf {
+            width: 250px;
+            height: 30px;
+            border: 2px dotted black;
+            text-align: center;
+            font-size: 25pt;
+        }
+    </style>
+    <script type="text/javascript">
+
+        //https://api.jquery.com/category/effects/
+
+        $(document).ready(function () {
+
+            //slideup() parecido com o show()
+            //pode usar milisegundos também. Fast, slow
+            //pode ser passado uma função também
+            $('#sanf1').click(function(e){
+                //$('#paragrafo1').slideUp('slow');
+                $('#paragrafo1').slideUp('slow',function(){
+                    console.log('slideup funcionando!');
+                });
+            });
+
+             $('#sanf2').click(function(e){
+                $('#paragrafo1').slideDown('fast',function(){
+                    console.log('slidedown funcionando!');
+                });
+            });
+
+            $('#sanf3').click(function(e){
+                $('#paragrafo2').slideToggle(1000);
+            });
+
+            $('#fadein').click(function(e){
+               $('#paragrafo1').fadeIn(1000);
+            });
+
+            $('#fadeout').click(function(e){
+               $('#paragrafo1').fadeOut(1000);
+            });
+
+            $('#fadetoggle').click(function(e){
+               $('#paragrafo2').fadeToggle(1000);
+            });
+
+            //fadeto: 3000: milisegundos, 0.3: porcentagem da transparência
+            $('#fadeto').click(function(e){
+               $('#paragrafo2').fadeTo(1000,0.3);
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="div1" class="test">
+        <div id="sanf1" class="sanf">
+            Slide up
+        </div>
+
+        <div id="fadein" class="sanf">
+            Fade in
+        </div>
+
+        <p id="paragrafo1" class="paragrafo">
+            Lorem Ipsum é simplesmente
+
+        <div id="sanf2" class="sanf">
+            Slide down
+        </div>
+         <div id="fadeout" class="sanf">
+            Fade out
+        </div>
+        <br/><br/>
+
+         <div id="sanf3" class="sanf">
+             Toggle
+        </div>
+
+         <div id="fadetoggle" class="sanf">
+             Fade toggle
+        </div>
+
+         <div id="fadeto" class="sanf">
+             FadeTo
+        </div>
+
+        <p id="paragrafo2" class="paragrafo">
+
+            Lorem Ipsum é simplesmente
+        </p>
+            </div>
+</body>
+
+</html>
