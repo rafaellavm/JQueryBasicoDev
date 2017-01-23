@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<title>Contagem de caracteres</title>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			$('body').css({
+                'font-family': 'Segoe UI',
+                'padding':'20px'
+            });	
+
+            $('table').css({
+                'border': '1px solid gray',
+                'width': '80%'
+            });
+
+            $('tr').css({
+                'border': '1px solid gray'
+            });
+
+           $('textarea').bind('input keyup paster',function(){
+                $('h5').text(''); 
+               var cont = $(this).val().length;
+               var limite = 50;
+               var disp = limite - cont;
+               if(disp < 0){
+                   var temp = $(this).val().substring(0,limite);
+                   $(this).val(temp);
+                   disp = 0;
+                   $('h5').text('Limite máximo atingido!').css('color', 'red');
+               }
+               $('#cont').text(cont);
+           });
+
+		});
+
+	</script>
+</head>
+
+<body>
+
+        <h2>Meu tuíte rápido!</h2>
+        <h4>Digite no máximo 50 chars</h4>
+        <h5></h5>
+
+    <table cellpading="4">
+		<tr>
+            <td><textarea cols="20" rows="5"></textarea>
+			<td>
+				Total de caracteres<span id="cont"></span>
+			</td>
+		</tr>
+	 
+	</table>
+
+</body>
+
+</html>
