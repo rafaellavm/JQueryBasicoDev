@@ -1,0 +1,79 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<title>Restringindo valores não numéricos</title>
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			$('body').css({
+                'font-family': 'Segoe UI',
+                'padding':'20px'
+            });	
+
+            $('table').css({
+                'border': '1px solid gray',
+                'width': '80%'
+            });
+
+           /* // e: corresponde à tecla do teclado
+            //e.wich: número  correspondente À tecla clicada naquele momento
+            $(':input[type=text]').keydown(function(e){
+                var key = e.which;
+                var isNumero = (key >= 48 && key <= 57);
+                
+                //inArray: vai verificar se existe um tal valor (key) no array passado
+                //os números passados nesse array são correspondentes Às teclas de navegacao, backspace, etc
+                //se ela encontrar o valor, ela retorna o valor ou valores num array. Se não encontrar retorna -1
+                var outrasTeclas = ($.inArray(key,[8,37,38,39,40,46]) != -1);
+
+                return (isNumero || outrasTeclas);
+                /* if(isNumero || outrasTeclas){
+                    return true;
+                }
+                else{
+                    return false;
+                } 
+                });*/ 
+
+                //outra forma de fazer: 
+                $(':input[type=text]').keyup(function(e){
+                     var isNumero = $.isNumeric($(this).val());
+                     if(isNumero){
+                         return true;
+                     }else{
+                         var size = $(this).val();
+                         $(this).val($(this).val().substr(0,size-1));
+                         return false;
+                     }
+                        
+                });
+		});
+
+	</script>
+</head>
+
+<body>
+
+        <h2>Restringindo valores não numéricos</h2>
+        <h4>Digite somente valores numéricos</h4>
+        <h5></h5>
+
+    <table cellpading="4">
+		<tr>
+            <td>
+                <input type="text" />
+			</td>
+		</tr>
+	 
+	</table>
+
+</body>
+
+</html>
