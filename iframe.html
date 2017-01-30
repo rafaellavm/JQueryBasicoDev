@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Trabalhando com Frames e jQuery: iframe</title>
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('body').css({
+                'font-family': 'Segoe UI',
+                'padding': '20px'
+            });
+
+
+            $(':button').click(function () {
+                var val = $('#inputOut', parent.document).val();
+                alert(val);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <h2>Iframe!</h2>
+        <table cellpadding="4">
+            <tr>
+                <td>
+                    <input type="text" id="inputIn" />
+                    <input type="button" value="IFRAME" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
