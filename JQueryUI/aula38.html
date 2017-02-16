@@ -4,18 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="content-language" content="pt-br" />
     <title>JQuery UI</title>
-    <link href="css/jquery-ui.min.css" rel="stylesheet">
-    <link href="css/jquery-ui.structure.min.css" rel="stylesheet">
-    <link href="css/jquery-ui.theme.min.css" rel="stylesheet">
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" rel="stylesheet">
+    <script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js" type="text/javascript"></script>
+    <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-       /* $(document).ready(function(){
-           $('#calendario').datepicker();
-        });*/
-
-         $(document).ready(function () {
+        $(document).ready(function () {
             $('#calendario').datepicker({
                 dateFormat: 'dd/mm/yy',
                 dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
@@ -42,7 +37,20 @@
 </head>
 
 <body>
-   <input type="text" id="calendario"/>
+   <div style="margin-top: 100px;
+				margin-left: 50px;
+				font-family: Segoe UI;
+				font-size: 12pt;">
+			Selecione:<br>
+			<input type="text" id="calendario" style="height: 30px;
+				font-family: Segoe UI;
+				font-size: 12pt;
+				color: green;
+				font-weight: bold;
+				padding: 10px;
+				padding-bottom: 15px;
+				padding-top: 15px;"/>
+		</div>
 </body>
 
 </html>
