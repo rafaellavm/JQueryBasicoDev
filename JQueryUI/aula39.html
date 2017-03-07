@@ -1,0 +1,84 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="pt-br" />
+	<title>JQuery UI - Adicionando Texto no DatePicker</title>
+	<link href="./jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+	<link href="./jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" rel="stylesheet">
+	<link href="./jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" rel="stylesheet">
+	<script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js" type="text/javascript"></script>
+	<script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+	<style type="text/css">
+		.ui-datepicker-trigger {
+			margin-left: 5px;
+			height: 22px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#calendario').datepicker({
+				dateFormat: 'dd/mm/yy',
+				dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+				dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+				dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+				monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro',
+					'Outubro', 'Novembro', 'Dezembro'
+				],
+				monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+				nextText: 'Próximo',
+				prevText: 'Anterior',
+				showOn: 'both',
+				buttonImage: './imgs/cal.gif',
+				buttonImageOnly: true,
+				showAnim: 'fold',
+				showWeek: true,
+				weekHeader: 'Sem',
+				defaultDate: +3,
+				maxDate: '+1y +1m +2d',
+				minDate: '-1m -2w',
+				firstDay: 1,
+				appendText: 'Padrão: dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				duration: 'fast',
+				showButtonPanel: true,
+				closeText: 'Fechar',
+				currentText: 'Hoje',
+				showWeek: true,
+				weekHeader: 'Sem',
+				defaultDate: +3,
+				maxDate: '+1y +1m +2d',
+				minDate: '-1m -2w',
+				firstDay: 1,
+				appendText: 'Padrão: dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				duration: 'fast',
+				showButtonPanel: true,
+				closeText: 'Fechar',
+				currentText: 'Hoje'
+
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div style="margin-top: 100px;
+				margin-left: 50px;
+				font-family: Segoe UI;
+				font-size: 12pt;">
+		Selecione:<br>
+		<input type="text" id="calendario" style="height: 30px;
+				font-family: Segoe UI;
+				font-size: 12pt;
+				color: green;
+				font-weight: bold;
+				padding: 10px;
+				padding-bottom: 15px;
+				padding-top: 15px;" />
+		</div>
+</body>
+
+</html>
