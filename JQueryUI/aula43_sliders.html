@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>JQuery UI - Sliders </title>
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" rel="stylesheet">
+    <script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js" type="text/javascript"></script>
+    <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+    
+    <style type="text/css">
+      
+    </style>
+    <script type="text/javascript">
+     
+        $(document).ready(function(){
+            $('#slider').slider({
+                max: 50,
+                min: 10,
+                value: 15,
+                orientation: 'horizontal',
+                slide: function(event, ui){
+                    $('#valor').val(ui.value);
+                    //alert(ui.value);
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+   <div id="slider"></div>
+    Valor: <input type="button" id="valor"/>
+</body>
+
+</html>

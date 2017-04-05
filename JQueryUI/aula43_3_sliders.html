@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>JQuery UI - Sliders </title>
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="./jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" rel="stylesheet">
+    <script src="./jquery-ui-1.12.1.custom/external/jquery/jquery.js" type="text/javascript"></script>
+    <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+    
+    <style type="text/css">
+      
+    </style>
+    <script type="text/javascript">
+     $(document).ready(function () {
+        var select = $('#opcoes');
+        
+        //insertAfter: inserir após
+       var slider = $('<div id="slider"></div>').insertAfter(select).slider({
+					range: "min",
+					max: 6,
+					min: 1,
+					values: select[0].selectedIndex + 1,
+					orientation: 'horizontal',
+					slide: function (event, ui) {
+						select[0].selectedIndex = ui.value - 1;
+					}
+				});
+				$('#opcoes').change(function () {
+					slider.slider("value", this.selectedIndex + 1);
+				});
+			});
+
+    </script>
+</head>
+
+<body>
+  <form>
+			Número mínimo de valores:
+			<select id="opcoes">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			</select>
+		</form>
+</body>
+
+</html>
